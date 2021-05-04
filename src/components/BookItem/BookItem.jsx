@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { bookModalShow } from "../../redux/bookModal/actions";
 import defaultCover from "../../img/book-icon.svg";
@@ -47,5 +48,13 @@ function BookItem({ book }) {
     </li>
   );
 }
+
+BookItem.propTypes = {
+  book: PropTypes.shape({
+    cover_i: PropTypes.number,
+    title: PropTypes.string.isRequired,
+    author_name: PropTypes.array,
+  }),
+};
 
 export default BookItem;

@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { selectPage } from "../../redux/bookList/actions";
+
 import "./Paginator.css";
 
 function Paginator({ count }) {
@@ -61,5 +63,9 @@ function Paginator({ count }) {
     </div>
   );
 }
+
+Paginator.propTypes = {
+  count: PropTypes.number.isRequired,
+};
 
 export default Paginator;
