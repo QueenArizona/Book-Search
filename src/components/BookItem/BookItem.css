@@ -1,0 +1,35 @@
+.book-item {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+.book-list__book:hover {
+  background-color: #b2741a;
+}
+
+.book-list__book:nth-child(n + 2) {
+  margin-top: 0.3rem;
+}
+
+.book-item__icon {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.book-item__image {
+  width: 100%;
+}
+
+.book-item__title,
+.book-item__author {
+  margin-left: 0.6rem;
+}
+
+.book-item__author {
+  text-transform: uppercase;
+}

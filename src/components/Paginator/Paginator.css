@@ -1,0 +1,59 @@
+.paginator {
+  margin-top: 0.6rem;
+}
+
+.pages,
+.page,
+.paginator__actions,
+.paginator__action {
+  display: flex;
+  justify-content: center;
+}
+
+.page,
+.paginator__action {
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #1a746b;
+  color: #ffffff;
+}
+
+.page {
+  font-weight: 700;
+}
+
+.paginator__action {
+  font-size: 1.5rempx;
+}
+
+.page:nth-child(n + 2),
+.paginator__action:nth-child(n + 2) {
+  margin-left: 0.6rem;
+}
+
+.page:hover,
+.paginator__action:hover {
+  background-color: #00695f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.page--active {
+  background-color: #b2741a;
+}
+
+.page--active:hover {
+  background-color: #b26a00;
+}
+
+@media (max-width: 400px) {
+  .pages {
+    display: none;
+  }
+}
+
+@media (min-width: 401px) {
+  .paginator__actions {
+    display: none;
+  }
+}
