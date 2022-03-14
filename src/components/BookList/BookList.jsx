@@ -16,8 +16,9 @@ function BookList(props) {
   };
 
   return (
-    <>
-      {loading && <Loader />} {error && <Error />}
+    <div className="book-container">
+      {loading && <Loader />}
+      {error && <Error />}
       {items.length > 0 && (
         <>
           <ul className="book-list">
@@ -28,7 +29,7 @@ function BookList(props) {
           <Paginator count={Math.ceil(items.length / 15)} />
         </>
       )}
-    </>
+    </div>
   );
 }
 

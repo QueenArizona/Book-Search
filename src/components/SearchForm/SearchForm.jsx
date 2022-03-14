@@ -12,7 +12,7 @@ function SearchForm(props) {
     dispatch(searchFieldChange(event.target.name, event.target.value));
   };
 
-  const handleSubmit = (event) => {
+  const searchRequest = (event) => {
     event.preventDefault();
     if (name) {
       dispatch(bookListRequest(name));
@@ -20,7 +20,7 @@ function SearchForm(props) {
   };
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={searchRequest}>
       <div className="search-form__fieldset">
         <input
           className="search-form__field"

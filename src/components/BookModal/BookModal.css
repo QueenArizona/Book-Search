@@ -1,12 +1,23 @@
 .modal {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
   display: none;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 1.5rem;
+  height: 100vh;
+}
+
+.modal::after {
+  content: "";
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -15,57 +26,65 @@
 }
 
 .modal__card {
-  width: 400px;
-  padding: 0.6rem 0.9rem;
+  position: relative;
+  z-index: 990;
+  max-width: 400px;
+  padding: 1rem;
   background-color: #ffb851;
 }
 
-.modal__actions {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .modal__button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
   border: 0;
   background-color: transparent;
   font-size: 1rem;
+  line-height: 100%;
   cursor: pointer;
 }
 
 .modal__content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 45% 50%;
+  grid-gap: 5%;
 }
 
 .book__cover {
-  max-width: 40%;
+  overflow: hidden;
 }
 
 .book__image {
+  display: block;
   width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: contain;
 }
 
 .book__details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 55%;
-}
-
-.book__wrapper:nth-child(n + 2) {
-  margin-top: 1.2rem;
+  grid-gap: 2rem;
   text-align: right;
 }
 
+.book__title-block {
+  text-align: left;
+}
+
 .book__title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
 .book__author {
-  font-size: 1.1rem;
   text-transform: uppercase;
+}
+
+.book__publisher {
+  word-break: break-all;
 }
 
 .book__date {

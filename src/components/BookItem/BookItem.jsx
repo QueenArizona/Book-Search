@@ -8,12 +8,12 @@ import "./BookItem.css";
 function BookItem({ book }) {
   const dispatch = useDispatch();
 
-  const handleClick = () => {
+  const selectBook = () => {
     dispatch(bookModalShow(book));
   };
 
   return (
-    <li className="book-item book-list__book" onClick={handleClick}>
+    <li className="book-item book-list__book" onClick={selectBook}>
       <div className="book-item__icon">
         <img
           className="book-item__image"

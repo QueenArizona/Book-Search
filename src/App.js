@@ -4,11 +4,15 @@ import BookModal from "./components/BookModal/BookModal";
 
 function App() {
   return (
-    <div className="container">
-      <SearchForm />
-      <BookList />
+    <>
+      <div className="container">
+        <div className="search-app">
+          <SearchForm />
+          <BookList />
+        </div>
+      </div>
       <BookModal />
-    </div>
+    </>
   );
 }
 

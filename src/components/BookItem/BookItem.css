@@ -1,9 +1,11 @@
 .book-item {
   display: flex;
   align-items: center;
-  padding: 0.3rem;
+  grid-gap: 0.6rem;
+  padding: 0.5rem;
   font-size: 0.8rem;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .book-list__book:hover {
@@ -17,17 +19,15 @@
 .book-item__icon {
   width: 20px;
   height: 20px;
-  padding: 0;
   overflow: hidden;
 }
 
 .book-item__image {
+  display: block;
   width: 100%;
-}
-
-.book-item__title,
-.book-item__author {
-  margin-left: 0.6rem;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .book-item__author {

@@ -17,17 +17,17 @@ function Paginator({ count }) {
     return pages;
   };
 
-  const handleClick = (page) => {
+  const select = (page) => {
     dispatch(selectPage(page));
   };
 
-  const handleBefore = () => {
+  const selectBefore = () => {
     if (page > 1) {
       dispatch(selectPage(page - 1));
     }
   };
 
-  const handleAfter = () => {
+  const selectAfter = () => {
     if (page < count) {
       dispatch(selectPage(page + 1));
     }
@@ -37,28 +37,28 @@ function Paginator({ count }) {
     <div className="paginator">
       <div className="pages">
         {generate(count).map((el) => (
-          <div
+          <button
             className={`page ${page === el ? "page--active" : ""}`}
             key={el}
-            onClick={() => handleClick(el)}
+            onClick={() => select(el)}
           >
             {el}
-          </div>
+          </button>
         ))}
       </div>
       <div className="paginator__actions">
-        <div
+        <button
           className="paginator__action paginator__action--before"
-          onClick={handleBefore}
+          onClick={selectBefore}
         >
           ⟪
-        </div>
-        <div
+        </button>
+        <button
           className="paginator__action paginator__action--after"
-          onClick={handleAfter}
+          onClick={selectAfter}
         >
           ⟫
-        </div>
+        </button>
       </div>
     </div>
   );
