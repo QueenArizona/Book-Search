@@ -1,7 +1,15 @@
-.error-message {
-  padding: 0.6rem;
-  margin-top: 0.6rem;
-  background-color: #a73a38;
+.error {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #D64E52;
+  font-size: 1.6rem;
   text-align: center;
-  color: #ffeff1;
+  color: #FFFFFF;
+}
+
+@media (max-width: 575px) {
+  .error {
+    padding: 8px;
+    font-size: 1.4rem;
+  }
 }

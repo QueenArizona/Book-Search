@@ -1,14 +1,14 @@
 import SearchForm from "./components/SearchForm/SearchForm";
-import BookList from "./components/BookList/BookList";
+import BooksList from "./components/BooksList/BooksList";
 import BookModal from "./components/BookModal/BookModal";
 
 function App() {
   return (
     <>
-      <div className="container">
-        <div className="search-app">
+      <div className="app">
+        <div className="container">
           <SearchForm />
-          <BookList />
+          <BooksList />
         </div>
       </div>
       <BookModal />

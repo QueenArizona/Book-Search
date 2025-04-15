@@ -1,0 +1,20 @@
+.books {
+  margin-top: 24px;
+}
+
+.books__list {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #E7DBCA;
+}
+
+@media screen and (max-width: 575px) {
+  .books {
+    margin-top: 16px;
+  }
+
+  .books__list {
+    padding: 8px;
+    margin-top: 16px;
+  }
+}

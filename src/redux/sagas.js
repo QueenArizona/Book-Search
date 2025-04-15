@@ -1,19 +1,19 @@
 import { put, spawn, debounce, call, takeLatest } from "redux-saga/effects";
 import { SEARCH_FIELD_CHANGE } from "./search/types";
-import { BOOK_LIST_REQUEST } from "./bookList/types";
+import { BOOKS_LIST_REQUEST } from "./booksList/types";
 import {
-  bookListRequest,
-  bookListSuccess,
-  bookListFailure,
-} from "./bookList/actions";
-import { bookListFetch } from "./utils/api";
+  booksListRequest,
+  booksListSuccess,
+  booksListFailure,
+} from "./booksList/actions";
+import { booksListFetch } from "./utils/api";
 
 function filterSearchFieldAction({ type, payload }) {
   return type === SEARCH_FIELD_CHANGE && payload.value.trim() !== "";
 }
 
 function* handleSearchFieldSaga(action) {
-  yield put(bookListRequest(action.payload.value));
+  yield put(booksListRequest(action.payload.value));
 }
 
 function* watchSearchFieldSaga() {
@@ -22,15 +22,15 @@ function* watchSearchFieldSaga() {
 
 function* handleBookSearchSaga(action) {
   try {
-    const data = yield call(bookListFetch, action.payload.search);
-    yield put(bookListSuccess(data.docs));
+    const data = yield call(booksListFetch, action.payload.search);
+    yield put(booksListSuccess(data.docs));
   } catch (e) {
-    yield put(bookListFailure(e.message));
+    yield put(booksListFailure(e.message));
   }
 }
 
 function* watchBookSearchSaga() {
-  yield takeLatest(BOOK_LIST_REQUEST, handleBookSearchSaga);
+  yield takeLatest(BOOKS_LIST_REQUEST, handleBookSearchSaga);
 }
 
 export default function* saga() {

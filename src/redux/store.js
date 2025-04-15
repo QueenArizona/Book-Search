@@ -1,13 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
-import bookListReducer from "./bookList/reducer";
+import booksListReducer from "./booksList/reducer";
 import bookModalReducer from "./bookModal/reducer";
 import searchReducer from "./search/reducer";
 import saga from "./sagas";
 
 const reducer = combineReducers({
-  bookList: bookListReducer,
+  booksList: booksListReducer,
   bookModal: bookModalReducer,
   search: searchReducer,
 });

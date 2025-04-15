@@ -4,7 +4,7 @@ import "./Error.css";
 function Error(props) {
   return (
     <div className="error">
-      <p className="error-message">
+      <p>
         Что-то пошло не так, попробуйте перезагрузить страницу.
       </p>
     </div>

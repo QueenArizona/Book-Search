@@ -29,11 +29,12 @@ html,
 body {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  background-color: #FEF4E9;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
-  font-size: 16px;
+  font-size: 10px;
   color: #212121;
 }
 
@@ -43,6 +44,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font: inherit;
 }
 
 img {
@@ -62,15 +64,51 @@ button {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
 }
 
 .container {
   max-width: 1340px;
-  padding: 0 15px;
+  padding: 0 16px;
   margin: 0 auto;
 }
 
-.search-app {
-  padding: 2.5rem 0;
+@media screen and (max-width: 1439px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 576px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.app {
+  padding: 24px 0;
+}
+
+@media screen and (max-width: 575px) {
+  .app {
+    padding: 16px 0;
+  }
 }

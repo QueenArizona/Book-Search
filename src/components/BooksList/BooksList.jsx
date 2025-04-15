@@ -1,14 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import BookItem from "../BookItem/BookItem";
+import BooksItem from "../BooksItem/BooksItem";
 import Paginator from "../Paginator/Paginator";
 import Error from "../Error/Error";
 import Loader from "../Loader/Loader";
-import "./BookList.css";
+import "./BooksList.css";
 
-function BookList(props) {
+function BooksList(props) {
   const { items, loading, error, page } = useSelector(
-    (state) => state.bookList
+    (state) => state.booksList
   );
 
   const count = (page) => {
@@ -16,14 +16,14 @@ function BookList(props) {
   };
 
   return (
-    <div className="book-container">
+    <div className="books">
       {loading && <Loader />}
       {error && <Error />}
       {items.length > 0 && (
         <>
-          <ul className="book-list">
+          <ul className="books__list">
             {items.slice(count(page), count(page) + 15).map((el) => (
-              <BookItem key={el.key} book={el} />
+              <BooksItem key={el.key} book={el} />
             ))}
           </ul>
           <Paginator count={Math.ceil(items.length / 15)} />
@@ -33,4 +33,4 @@ function BookList(props) {
   );
 }
 
-export default BookList;
+export default BooksList;

@@ -3,58 +3,60 @@
   z-index: 99;
   top: 0;
   left: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  padding: 1.5rem;
-  height: 100vh;
-}
-
-.modal::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  height: 100%;
+  padding: 16px;
   background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  opacity: 0;
+  visibility: 0;
+  transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+  pointer-events: none;
 }
 
 .modal--active {
+  opacity: 1;
+  visibility: 1;
+  pointer-events: initial;
+}
+
+.modal__layout {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  margin: 0 auto;
 }
 
-.modal__card {
+.modal__inner {
   position: relative;
-  z-index: 990;
-  max-width: 400px;
-  padding: 1rem;
-  background-color: #ffb851;
+  z-index: 99;
+  width: 100%;
+  max-width: 480px;
+  min-height: calc(100vh - 32px);
+  padding: 24px 16px;
+  background-color: #57483B;
 }
 
-.modal__button {
+.modal__close {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 8px;
+  right: 8px;
   border: 0;
-  background-color: transparent;
-  font-size: 1rem;
-  line-height: 100%;
-  cursor: pointer;
+  background: none;
+}
+.modal__close svg {
+  width: 16px;
+  height: 16px;
+  stroke: #FFFFFF;
 }
 
-.modal__content {
-  display: grid;
-  grid-template-columns: 45% 50%;
-  grid-gap: 5%;
-}
-
-.book__cover {
+.book-modal__icon {
+  margin-top: 16px;
   overflow: hidden;
 }
 
-.book__image {
+.book-modal__icon img {
   display: block;
   width: 100%;
   height: 100%;
@@ -62,35 +64,29 @@
   object-fit: contain;
 }
 
-.book__details {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  grid-gap: 2rem;
-  text-align: right;
+.book-modal__content h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.book__title-block {
-  text-align: left;
-}
-
-.book__title {
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.book__author {
+.book-modal__content p {
+  margin-top: 8px;
+  font-size: 1.6rem;
   text-transform: uppercase;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.book__publisher {
-  word-break: break-all;
-}
+@media (max-width: 575px) {
+  .modal {
+    padding: 0;
+  }
 
-.book__date {
-  font-weight: 700;
-}
-
-.book__id {
-  font-size: 0.75rem;
+  .modal__inner {
+    min-height: 100vh;
+  }
 }
